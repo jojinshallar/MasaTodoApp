@@ -44,6 +44,5 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"jojinshallar_MasaTodoApp" /o:"funycubes" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet build "..\src\MasaTodoApp.Service\MasaTodoApp.Service.csproj"
-          dotnet build "..\src\MasaTodoApp.Web\MasaTodoApp.Web.csproj"
+          dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
